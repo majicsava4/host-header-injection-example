@@ -1,0 +1,2 @@
+[2026-06-05 23:18:28] token: oGZoyh7Y138a7EzOucwQyg
+    link: http://127.0.0.1:5000/reset-password?token=oGZoyh7Y138a7EzOucwQyg

@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = "moj secret key"
 
 # baza
-users = {"victim@gmail.com": {"password": generate_password_hash("victim123")}}
+users = {"tzoricic17223ri@raf.rs": {"password": generate_password_hash("123")}}
 
 reset_tokens = {}
 
@@ -182,7 +182,7 @@ def forgot_password():
                     f"http://{host}/reset-password?token={token}"
                )
                print(f"Generated link: {reset_link}")
-               send_email()
+               send_email(email, reset_link)
 
      return render_template_string(
           FORGOT_HTML,

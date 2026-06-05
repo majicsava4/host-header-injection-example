@@ -25,7 +25,6 @@ ATTACKER_HTML = """
 
 <p>We have your token</p>
 
-<a href="http://127.0.0.1:5000/reset-password?token={token}">http://127.0.0.1:5000/reset-password?token={token}</a>
 """
 
 

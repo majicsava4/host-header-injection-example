@@ -10,6 +10,9 @@ The attacker server is ran on 127.0.0.1:8000
 -flask
 -curl
 -werkzeug password hashing
+-css
+-smtplib
+
 ```
 
 ## Vulnerable app description
@@ -22,6 +25,10 @@ reset_link = f"http://{host}/reset-password?token={token}"
 ## Attacker server description
 
 VULE DODAJ
+
+## Real email imlemention
+The application includes a real email sending functionality using Python’s built-in smtplib library. When a user requests a password reset, the system generates a reset link and sends it directly to the user’s email address via SMTP.
+
 
 ## Demo tutorial
 
