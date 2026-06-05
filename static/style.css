@@ -1,14 +1,160 @@
-/*Gavro ne menjaj fajlove attacker i app nego ovde pravi dizajn
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-Primer kako da menjas za app iz ovog jednog fajla za oba
+
+/* aplikacija */
 .app-body {
-    background-color: white;
-    color: black;
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
 }
 
-Primer kako za attacker
-.attacker-body {
-    background-color: #0a0a0a;
-    color: #00ff00;
+.app-body h2,
+.app-body h3 {
+    text-align: center;
+    color: #1e3a8a;
+    margin: 0 0 18px;
 }
-*/
+.app-body h2 { font-size: 1.6rem; }
+
+.app-body form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 28px 26px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.12);
+}
+
+.app-body input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 8px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color .15s, box-shadow .15s;
+}
+.app-body input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.app-body button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s, transform .05s;
+}
+.app-body button:hover  { background: #1d4ed8; }
+.app-body button:active { transform: translateY(1px); }
+
+.app-body a {
+    color: #2563eb;
+    text-decoration: none;
+}
+.app-body a:hover { text-decoration: underline; }
+
+.app-body p { text-align: center; }
+
+.app-body hr {
+    border: none;
+    border-top: 1px dashed #cbd5e1;
+    margin: 22px 0 14px;
+}
+
+/* link za reset */
+.app-body a[href*="reset-password"] {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: #ecfdf5;
+    border: 1px solid #6ee7b7;
+    border-radius: 8px;
+    color: #065f46;
+    word-break: break-all;
+}
+
+/* greska */
+.app-body p[style*="red"] {
+    color: #dc2626 !important;
+    font-weight: 600;
+}
+
+
+/* napadac */
+.attacker-body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Courier New", Consolas, monospace;
+    background: #0a0a0a;
+    color: #00ff7f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 18px;
+    text-align: center;
+    text-shadow: 0 0 6px rgba(0, 255, 127, 0.45);
+}
+
+.attacker-body h1 {
+    margin: 0 0 10px;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff3131;
+    text-shadow: 0 0 10px rgba(255, 49, 49, 0.6);
+}
+
+.attacker-body p { font-size: 1rem; margin: 6px 0; }
+
+.attacker-body code {
+    display: inline-block;
+    max-width: 90vw;
+    margin: 12px 0;
+    padding: 12px 16px;
+    background: #001a0d;
+    border: 1px solid #00ff7f;
+    border-radius: 6px;
+    color: #aaffcc;
+    word-break: break-all;
+    box-shadow: 0 0 14px rgba(0, 255, 127, 0.25);
+}
+
+.attacker-body hr {
+    width: 80%;
+    border: none;
+    border-top: 1px dashed rgba(0, 255, 127, 0.35);
+    margin: 18px 0;
+}
+
+.attacker-body a {
+    color: #66ffb2;
+    word-break: break-all;
+}
+.attacker-body a:hover { color: #00ff7f; }
+
+
+@media (max-width: 420px) {
+    .app-body h2       { font-size: 1.4rem; }
+    .attacker-body h1  { font-size: 1.8rem; }
+}

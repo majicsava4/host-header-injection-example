@@ -14,6 +14,15 @@ users = {"victim@gmail.com": {"password": generate_password_hash("victim123")}}
 reset_tokens = {}
 
 LOGIN_HTML = """
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
+<title>Login</title>
+</head>
+<body class="app-body">
 <h2>Login</h2>
 
 <form method = "POST">
@@ -33,6 +42,15 @@ LOGIN_HTML = """
 
 
 HOME_HTML = """
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
+<title>Home</title>
+</head>
+<body class="app-body">
 
 <h2> Welcome </h2>
 <p>You are logged in as: {{email}} </p>
@@ -42,6 +60,15 @@ HOME_HTML = """
 
 
 FORGOT_HTML = """
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
+<title>Reset password</title>
+</head>
+<body class="app-body">
 <h2>Reset password</h2>
 
 <form method = "POST">
@@ -61,6 +88,15 @@ FORGOT_HTML = """
 
 
 RESET_HTML = """
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
+<title>Reset password</title>
+</head>
+<body class="app-body">
 
 
 <h2>Reset Password</h2>
