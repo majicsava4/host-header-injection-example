@@ -1,0 +1,14 @@
+/*Gavro ne menjaj fajlove attacker i app nego ovde pravi dizajn
+
+Primer kako da menjas za app iz ovog jednog fajla za oba
+.app-body {
+    background-color: white;
+    color: black;
+}
+
+Primer kako za attacker
+.attacker-body {
+    background-color: #0a0a0a;
+    color: #00ff00;
+}
+*/
