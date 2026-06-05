@@ -1,6 +1,7 @@
 from flask import Flask, request, session, redirect, render_template_string
 import secrets
 from werkzeug.security import generate_password_hash, check_password_hash
+from modules import send_email
 
 
 app = Flask(__name__)
@@ -145,6 +146,7 @@ def forgot_password():
                     f"http://{host}/reset-password?token={token}"
                )
                print(f"Generated link: {reset_link}")
+               send_email()
 
      return render_template_string(
           FORGOT_HTML,
