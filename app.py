@@ -175,14 +175,14 @@ def forgot_password():
 
                reset_tokens[token] = email
 
-               #RANJIVOST
-               host = request.headers.get("Host")
-               #formiramo reset link, problem sto verujemo korisniku za host
+               #RANJIVOST popravljena
+               #host = request.headers.get("Host")
+               #formiramo reset link sa hardkodovanim host-om
                reset_link = (
-                    f"http://{host}/reset-password?token={token}"
+                    f"http://127.0.0.1:5000/reset-password?token={token}"
                )
                print(f"Generated link: {reset_link}")
-               send_email(email, reset_link)
+               #send_email(email, reset_link)
 
      return render_template_string(
           FORGOT_HTML,
