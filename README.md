@@ -24,7 +24,12 @@ reset_link = f"http://{host}/reset-password?token={token}"
 ```
 ## Attacker server description
 
-VULE DODAJ
+Server steals token from victim, and then stores it in a text file.
+Attacker's server is on port 8000.
+This code returns user's token from the URL:
+```
+token = request.args.get("token")
+```
 
 ## Real email imlemention
 The application includes a real email sending functionality using Python’s built-in smtplib library. When a user requests a password reset, the system generates a reset link and sends it directly to the user’s email address via SMTP.
