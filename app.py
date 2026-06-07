@@ -182,7 +182,7 @@ def forgot_password():
                     f"http://127.0.0.1:5000/reset-password?token={token}"
                )
                print(f"Generated link: {reset_link}")
-               #send_email(email, reset_link)
+               send_email(email, reset_link)
 
      return render_template_string(
           FORGOT_HTML,
