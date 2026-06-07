@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+from dotenv import load_dotenv
 
 import smtplib
 from email.mime.text import MIMEText
@@ -21,7 +22,12 @@ def save_to_file(token):
 def send_email(receiver_email, reset_link):
 
     sender_email = "tzoricic17223ri@raf.rs"
-    app_password = "hsbg gsud mkde jvye"
+
+    load_dotenv()
+
+    app_password = os.getenv("EMAIL_PASSWORD")
+
+    
 
     subject = "Password Reset Request"
 
